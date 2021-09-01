@@ -12,6 +12,10 @@ $routes = [
         'controller' => 'MainController',
         'method' => 'home',
     ],
+    '/category' => [
+        'controller' => 'MainController',
+        'method' => 'category',
+    ],
 ];
 
 //=============================================================

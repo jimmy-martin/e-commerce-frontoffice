@@ -6,6 +6,10 @@ class MainController
     {
         $this->show('home');
     }
+    public function category()
+    {
+        $this->show('product.list');
+    }
 
     public function show($viewName, $viewVars = [])
     {
