@@ -1,15 +1,23 @@
 <?php
 
-class MainController
+class CatalogController
 {
-    public function home()
+
+    public function category()
     {
-        $this->show('home');
+        $this->show('product.list');
     }
 
-    public function legal()
+    public function type(){
+        $this->show('product.list');
+    }
+    public function brand()
     {
-        $this->show('home');
+        $this->show('product.list');
+    }
+
+    public function product(){
+        $this->show('product.details');
     }
 
     public function show($viewName, $viewVars = [])

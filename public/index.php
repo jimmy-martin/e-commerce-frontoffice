@@ -5,6 +5,7 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 require_once __DIR__ . '/../app/controllers/MainController.php';
+require_once __DIR__ . '/../app/controllers/CatalogController.php';
 
 //=============================================================
 // ROUTER
@@ -30,12 +31,34 @@ $router->map(
     'main-home' //! 4 (optionnel): Nom unique de la route (on utilise une convention de nommage: '{nom_du_controller}-{nom_de_la_route}')
 );
 
-$router->map(
-    'GET',
-    '/catalog/category/[i:id]',
-    ['controller' => 'MainController', 'method' => 'category',],
-    'main-category'
-);
+// Afin de faciliter l'ajout de pages je vais utiliser addRoutes() de AltoRouter
+// et non plus map()
+$router->addRoutes([
+    [
+        'GET',
+        '/catalog/category/[i:id]',
+        ['controller' => 'CatalogController', 'method' => 'category',],
+        'main-category'
+    ],
+    [
+        'GET',
+        '/catalog/type/[i:id]',
+        ['controller' => 'CatalogController', 'method' => 'category',],
+        'catalog-type'
+    ],
+    [
+        'GET',
+        '/catalog/brand/[i:id]',
+        ['controller' => 'CatalogController', 'method' => 'category',],
+        'catalog-brand'
+    ],
+    [
+        'GET',
+        '/catalog/product/[i:id]',
+        ['controller' => 'CatalogController', 'method' => 'category',],
+        'catalog-product'
+    ]
+]);
 
 // Ensuite, on demande au router de trouver la route
 // qui correspond à l'url demandée par le client
