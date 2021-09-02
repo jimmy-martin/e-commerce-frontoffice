@@ -42,7 +42,7 @@ $router->map(
     'GET',  //! 1: Methode http (plupart du temps get)
     '/', //! 2: url de la route (sans la partie fixe)
     ['controller' => 'MainController', 'method' => 'home',], //! 3: tableau qui stocke le nom du controller et la methode necessaire au fonctionnement du dispatcher
-    'main-home' //! 4 (optionnel): Nom unique de la route
+    'main-home' //! 4 (optionnel): Nom unique de la route (on utilise une convention de nommage: '{nom_du_controller}-{nom_de_la_route}')
 );
 
 // $requestedPageURL = $_GET['_url'] ?? '/';
