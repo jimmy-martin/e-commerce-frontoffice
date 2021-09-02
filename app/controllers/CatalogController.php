@@ -1,6 +1,8 @@
 <?php
 
-class CatalogController
+// Je vais utiliser l'héritage afin de ne pas recoder ma fonction show
+// qui est déja codé dans MainController
+class CatalogController extends MainController
 {
 
     public function category()
@@ -18,12 +20,5 @@ class CatalogController
 
     public function product(){
         $this->show('product.details');
-    }
-
-    public function show($viewName, $viewVars = [])
-    {
-        require_once __DIR__ . '/../views/partials/header.tpl.php';
-        require_once __DIR__ . '/../views/' . $viewName . '.tpl.php';
-        require_once __DIR__ . '/../views/partials/footer.tpl.php';
     }
 }
