@@ -1,5 +1,9 @@
 <?php
 
+// Je charge automatiquement toutes mes dependances
+// grace a autoload.php créé par Composer
+require_once __DIR__ . '/../vendor/autoload.php';
+
 require_once __DIR__ . '/../app/controllers/MainController.php';
 
 //=============================================================
@@ -46,3 +50,4 @@ $methodName = $routeInfo['method'];
 $controller = new $controllerName();
 // Et appeler la méthode là aussi dynamiquement
 $controller->$methodName();
+
