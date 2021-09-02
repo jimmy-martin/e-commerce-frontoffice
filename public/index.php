@@ -36,26 +36,32 @@ $router->map(
 $router->addRoutes([
     [
         'GET',
+        '/legal',
+        ['controller' => 'MainController', 'method' => 'legal',],
+        'main-legal'
+    ],
+    [
+        'GET',
         '/catalog/category/[i:id]',
         ['controller' => 'CatalogController', 'method' => 'category',],
-        'main-category'
+        'catalog-category'
     ],
     [
         'GET',
         '/catalog/type/[i:id]',
-        ['controller' => 'CatalogController', 'method' => 'category',],
+        ['controller' => 'CatalogController', 'method' => 'type',],
         'catalog-type'
     ],
     [
         'GET',
         '/catalog/brand/[i:id]',
-        ['controller' => 'CatalogController', 'method' => 'category',],
+        ['controller' => 'CatalogController', 'method' => 'brand',],
         'catalog-brand'
     ],
     [
         'GET',
         '/catalog/product/[i:id]',
-        ['controller' => 'CatalogController', 'method' => 'category',],
+        ['controller' => 'CatalogController', 'method' => 'product',],
         'catalog-product'
     ]
 ]);

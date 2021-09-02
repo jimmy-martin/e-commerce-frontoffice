@@ -9,7 +9,7 @@ class MainController
 
     public function legal()
     {
-        $this->show('home');
+        $this->show('legal');
     }
 
     public function show($viewName, $viewVars = [])
