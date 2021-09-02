@@ -7,22 +7,6 @@ require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../app/controllers/MainController.php';
 
 //=============================================================
-// ROUTES
-//=============================================================
-
-// // On va stocker nos routes dans une variable
-// $routes = [
-//     '/' => [
-//         'controller' => 'MainController',
-//         'method' => 'home',
-//     ],
-//     '/category' => [
-//         'controller' => 'MainController',
-//         'method' => 'category',
-//     ],
-// ];
-
-//=============================================================
 // ROUTER
 //=============================================================
 
@@ -38,6 +22,7 @@ $router = new AltoRouter();
 $router->setBasePath($_SERVER['BASE_URI']);
 // dump($_SERVER);
 
+// Je créé mes routes
 $router->map(
     'GET',  //! 1: Methode http (plupart du temps get)
     '/', //! 2: url de la route (sans la partie fixe)
@@ -45,21 +30,34 @@ $router->map(
     'main-home' //! 4 (optionnel): Nom unique de la route (on utilise une convention de nommage: '{nom_du_controller}-{nom_de_la_route}')
 );
 
+$router->map(
+    'GET',
+    '/category',
+    ['controller' => 'MainController', 'method' => 'category',],
+    'main-category'
+);
+
+// Ensuite, on demande au router de trouver la route
+// qui correspond à l'url demandée par le client
+$routeInfo = $router->match();
+
+dump($routeInfo);
+
 // $requestedPageURL = $_GET['_url'] ?? '/';
 
 // Gestion des mauvaises url 
-// if (!array_key_exists($requestedPageURL, $routes)) {
-//     // pour afficher une erreur 404 je procede comme ci dessous
-//     http_response_code(404);
-//     exit();
-// }
+if (!$routeInfo) {
+    // pour afficher une erreur 404 je procede comme ci dessous
+    http_response_code(404);
+    exit();
+}
 
-// Je peux maintenant acceder a la route correspondante dans le tableau $routes
-// $routeInfo = $routes[$requestedPageURL];
+// Je peux maintenant acceder a la route correspondante
+$dispatchInfo = $routeInfo['target'];
 
-// // On a donc accèes aux infos necessaires
-// $controllerName = $routeInfo['controller'];
-// $methodName = $routeInfo['method'];
+// On a donc accèes aux infos necessaires
+$controllerName = $dispatchInfo['controller'];
+$methodName = $dispatchInfo['method'];
 
 //=============================================================
 // DISPATCHER
