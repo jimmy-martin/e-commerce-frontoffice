@@ -32,7 +32,7 @@ $router->map(
 
 $router->map(
     'GET',
-    '/category',
+    '/catalog/category/[i:id]',
     ['controller' => 'MainController', 'method' => 'category',],
     'main-category'
 );
@@ -49,7 +49,7 @@ dump($routeInfo);
 if (!$routeInfo) {
     // pour afficher une erreur 404 je procede comme ci dessous
     http_response_code(404);
-    exit();
+    exit('Cette page n\'existe pas !');
 }
 
 // Je peux maintenant acceder a la route correspondante
