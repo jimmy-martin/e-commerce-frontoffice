@@ -103,4 +103,5 @@ $methodName = $dispatchInfo['method'];
 // Je peux maintenant instancier dynamiquement mon controller
 $controller = new $controllerName();
 // Et appeler la méthode là aussi dynamiquement
+// Je transmet un tableau qui contient tous les params de l'url
 $controller->$methodName($routeInfo['params']);

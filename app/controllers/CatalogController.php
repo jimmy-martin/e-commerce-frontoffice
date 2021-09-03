@@ -14,6 +14,12 @@ class CatalogController extends MainController
     {
         $this->show('product.list');
     }
+
+    /**
+     * Product listing by brand
+     *
+     * @param [array] $params Associative array of all URL parameters
+     */
     public function brand($params)
     {
         // dump($params['id']);
