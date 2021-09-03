@@ -4,6 +4,8 @@
 // grace a autoload.php créé par Composer
 require_once __DIR__ . '/../vendor/autoload.php';
 
+require_once __DIR__ . '/../app/utils/Database.php';
+
 require_once __DIR__ . '/../app/controllers/MainController.php';
 require_once __DIR__ . '/../app/controllers/CatalogController.php';
 
