@@ -4,8 +4,14 @@
 // grace a autoload.php créé par Composer
 require_once __DIR__ . '/../vendor/autoload.php';
 
+// Utils
 require_once __DIR__ . '/../app/utils/Database.php';
 
+// Models
+require_once __DIR__ . '/../app/models/Brand.php';
+
+
+// Controllers
 require_once __DIR__ . '/../app/controllers/MainController.php';
 require_once __DIR__ . '/../app/controllers/CatalogController.php';
 
@@ -97,4 +103,4 @@ $methodName = $dispatchInfo['method'];
 // Je peux maintenant instancier dynamiquement mon controller
 $controller = new $controllerName();
 // Et appeler la méthode là aussi dynamiquement
-$controller->$methodName();
+$controller->$methodName($routeInfo['params']);

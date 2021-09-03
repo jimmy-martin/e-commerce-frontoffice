@@ -10,15 +10,24 @@ class CatalogController extends MainController
         $this->show('product.list');
     }
 
-    public function type(){
-        $this->show('product.list');
-    }
-    public function brand()
+    public function type()
     {
         $this->show('product.list');
     }
+    public function brand($params)
+    {
+        // dump($params['id']);
 
-    public function product(){
+        // J'instancie ma classe brand
+        // pour pouvoir appeler sa méthode find()
+        $brandModel = new Brand();
+        $brand = $brandModel->find($params['id']);
+
+        $this->show('product.list');
+    }
+
+    public function product()
+    {
         $this->show('product.details');
     }
 }
