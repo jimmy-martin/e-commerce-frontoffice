@@ -43,7 +43,7 @@ class Product
     }
 
     /**
-     * Return all the brands
+     * Return all the products
      *
      * @return [object] $allProductObjects
      */
