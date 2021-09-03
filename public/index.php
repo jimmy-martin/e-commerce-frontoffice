@@ -9,6 +9,9 @@ require_once __DIR__ . '/../app/utils/Database.php';
 
 // Models
 require_once __DIR__ . '/../app/models/Brand.php';
+require_once __DIR__ . '/../app/models/Product.php';
+require_once __DIR__ . '/../app/models/Type.php';
+require_once __DIR__ . '/../app/models/Category.php';
 
 
 // Controllers
