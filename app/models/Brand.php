@@ -17,10 +17,10 @@ class Brand
     // =============================================================
 
     /**
-     * Find a brand by id
+     * Return a brand by id
      *
      * @param [int] $id ID of the searched Brand in database
-     * @return 
+     * @return [object] $brandObject
      */
     public function find($id)
     {
@@ -40,6 +40,31 @@ class Brand
         $brandObject = $statement->fetchObject('Brand');
 
         return $brandObject;
+    }
+
+    /**
+     * Return all the brands
+     *
+     * @return [object] $allBrandObjects
+     */
+    public function findAll()
+    {
+        // On se connecte a la bdd
+        // et on recupere l'objet pdo pour mes futures requetes
+        $pdo = Database::getPDO();
+
+        // On prepare notre requete
+        $sql = 'SELECT * FROM `brand`';
+
+        //  On execute la requete
+        $statement = $pdo->query($sql);
+
+        // Je recupere le resultat de la requete
+        // dans un tableau d'objets de type Brand (grace a fetchObject)
+        // avec les valeurs trouvées dans la bdd
+        $allBrandObjects = $statement->fetchAll(PDO::FETCH_CLASS, 'Brand');
+
+        return $allBrandObjects;
     }
 
     // =============================================================

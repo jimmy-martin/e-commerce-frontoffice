@@ -78,7 +78,7 @@ $router->addRoutes([
 // qui correspond à l'url demandée par le client
 $routeInfo = $router->match();
 
-dump($routeInfo);
+// dump($routeInfo);
 
 // $requestedPageURL = $_GET['_url'] ?? '/';
 

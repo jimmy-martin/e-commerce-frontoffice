@@ -22,12 +22,14 @@ class CatalogController extends MainController
      */
     public function brand($params)
     {
-        // dump($params['id']);
-
         // J'instancie ma classe brand
         // pour pouvoir appeler sa méthode find()
         $brandModel = new Brand();
         $brand = $brandModel->find($params['id']);
+
+        // dump($params);
+        // dump($brand);
+        // dump($brandModel->findAll());
 
         $this->show('product.list');
     }
