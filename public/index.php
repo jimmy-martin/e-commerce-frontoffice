@@ -74,6 +74,12 @@ $router->addRoutes([
         '/catalog/product/[i:id]',
         ['controller' => 'CatalogController', 'method' => 'product',],
         'catalog-product'
+    ],
+    [
+        'GET',
+        '/test',
+        ['controller' => 'MainController', 'method' => 'test',],
+        'main-test'
     ]
 ]);
 
