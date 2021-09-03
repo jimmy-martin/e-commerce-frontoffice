@@ -5,13 +5,27 @@
 class CatalogController extends MainController
 {
 
-    public function category()
+    public function category($params)
     {
+        $categoryModel = new Brand();
+        $category = $categoryModel->find($params['id']);
+
+        dump($params);
+        dump($category);
+        dump($categoryModel->findAll());
+
         $this->show('product.list');
     }
 
-    public function type()
+    public function type($params)
     {
+        $typeModel = new Type();
+        $type = $typeModel->find($params['id']);
+
+        dump($params);
+        dump($type);
+        dump($typeModel->findAll());
+
         $this->show('product.list');
     }
 
@@ -27,15 +41,22 @@ class CatalogController extends MainController
         $brandModel = new Brand();
         $brand = $brandModel->find($params['id']);
 
-        // dump($params);
-        // dump($brand);
-        // dump($brandModel->findAll());
+        dump($params);
+        dump($brand);
+        dump($brandModel->findAll());
 
         $this->show('product.list');
     }
 
-    public function product()
+    public function product($params)
     {
+        $productModel = new Product();
+        $product = $productModel->find($params['id']);
+
+        dump($params);
+        dump($product);
+        dump($productModel->findAll());
+
         $this->show('product.details');
     }
 }
