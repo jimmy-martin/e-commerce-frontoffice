@@ -196,7 +196,7 @@ class Product
     /**
      * Get the value of created_at
      */ 
-    public function getCreated_at()
+    public function getCreatedAt()
     {
         return $this->created_at;
     }
@@ -206,7 +206,7 @@ class Product
      *
      * @return  self
      */ 
-    public function setCreated_at($created_at)
+    public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
 
@@ -216,7 +216,7 @@ class Product
     /**
      * Get the value of updated_at
      */ 
-    public function getUpdated_at()
+    public function getUpdatedAt()
     {
         return $this->updated_at;
     }
@@ -226,7 +226,7 @@ class Product
      *
      * @return  self
      */ 
-    public function setUpdated_at($updated_at)
+    public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
 
@@ -236,7 +236,7 @@ class Product
     /**
      * Get the value of brand_id
      */ 
-    public function getBrand_id()
+    public function getBrandId()
     {
         return $this->brand_id;
     }
@@ -246,7 +246,7 @@ class Product
      *
      * @return  self
      */ 
-    public function setBrand_id($brand_id)
+    public function setBrandId($brand_id)
     {
         $this->brand_id = $brand_id;
 
@@ -256,7 +256,7 @@ class Product
     /**
      * Get the value of category_id
      */ 
-    public function getCategory_id()
+    public function getCategoryId()
     {
         return $this->category_id;
     }
@@ -266,7 +266,7 @@ class Product
      *
      * @return  self
      */ 
-    public function setCategory_id($category_id)
+    public function setCategoryId($category_id)
     {
         $this->category_id = $category_id;
 
@@ -276,7 +276,7 @@ class Product
     /**
      * Get the value of type_id
      */ 
-    public function getType_id()
+    public function getTypeId()
     {
         return $this->type_id;
     }
@@ -286,7 +286,7 @@ class Product
      *
      * @return  self
      */ 
-    public function setType_id($type_id)
+    public function setTypeId($type_id)
     {
         $this->type_id = $type_id;
 
