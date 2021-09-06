@@ -2,7 +2,7 @@
 
 class CoreController
 {
-    public function show($viewName, $viewVars = [])
+    protected function show($viewName, $viewVars = [])
     {
         global $router;        
 
