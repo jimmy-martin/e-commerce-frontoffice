@@ -70,7 +70,7 @@ class Brand
     // =============================================================
     // GETTERS & SETTERS
     // =============================================================
-
+    #region getters & setters
 
     /**
      * Get the value of id
@@ -155,4 +155,5 @@ class Brand
         $this->updated_at = $updated_at;
         return $this;
     }
+    #endregion
 }

@@ -63,7 +63,7 @@ class Product
     // =============================================================
     // GETTERS & SETTERS
     // =============================================================
-
+    #region getters & setters // permet de pouvoir reduire par la suite une partie du code
 
     /**
      * Get the value of id
@@ -232,64 +232,5 @@ class Product
 
         return $this;
     }
-
-    /**
-     * Get the value of brand_id
-     */ 
-    public function getBrandId()
-    {
-        return $this->brand_id;
-    }
-
-    /**
-     * Set the value of brand_id
-     *
-     * @return  self
-     */ 
-    public function setBrandId($brand_id)
-    {
-        $this->brand_id = $brand_id;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of category_id
-     */ 
-    public function getCategoryId()
-    {
-        return $this->category_id;
-    }
-
-    /**
-     * Set the value of category_id
-     *
-     * @return  self
-     */ 
-    public function setCategoryId($category_id)
-    {
-        $this->category_id = $category_id;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of type_id
-     */ 
-    public function getTypeId()
-    {
-        return $this->type_id;
-    }
-
-    /**
-     * Set the value of type_id
-     *
-     * @return  self
-     */ 
-    public function setTypeId($type_id)
-    {
-        $this->type_id = $type_id;
-
-        return $this;
-    }
+    #endregion
 }

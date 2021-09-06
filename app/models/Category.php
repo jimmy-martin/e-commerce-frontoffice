@@ -27,13 +27,9 @@ class Category
     public function find($id)
     {
         $pdo = Database::getPDO();
-
         $sql = 'SELECT * FROM `category` WHERE `id` = ' . $id;
-
         $statement = $pdo->query($sql);
-
         $categoryObject = $statement->fetchObject('Category');
-
         return $categoryObject;
     }
 
@@ -45,20 +41,16 @@ class Category
     public function findAll()
     {
         $pdo = Database::getPDO();
-
         $sql = 'SELECT * FROM `category`';
-
         $statement = $pdo->query($sql);
-
         $allCategoriesObjects = $statement->fetchAll(PDO::FETCH_CLASS, 'Category');
-
         return $allCategoriesObjects;
     }
 
     // =============================================================
     // GETTERS & SETTERS
     // =============================================================
-
+    #region getters & setters
 
     /**
      * Get the value of id
@@ -187,4 +179,5 @@ class Category
 
         return $this;
     }
+    #endregion
 }

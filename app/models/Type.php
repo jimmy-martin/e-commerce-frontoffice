@@ -25,13 +25,9 @@ class Type
     public function find($id)
     {
         $pdo = Database::getPDO();
-
         $sql = 'SELECT * FROM `type` WHERE `id` = ' . $id;
-
         $statement = $pdo->query($sql);
-
         $typeObject = $statement->fetchObject('Type');
-
         return $typeObject;
     }
 
@@ -43,20 +39,16 @@ class Type
     public function findAll()
     {
         $pdo = Database::getPDO();
-
         $sql = 'SELECT * FROM `type`';
-
         $statement = $pdo->query($sql);
-
         $allTypeObjects = $statement->fetchAll(PDO::FETCH_CLASS, 'Type');
-
         return $allTypeObjects;
     }
 
     // =============================================================
     // GETTERS & SETTERS
     // =============================================================
-
+    #region getters & setter
 
     /**
      * Get the value of id
@@ -146,4 +138,5 @@ class Type
 
         return $this;
     }
+    #endregion
 }
