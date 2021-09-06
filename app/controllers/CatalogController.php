@@ -54,9 +54,11 @@ class CatalogController extends CoreController
         $product = $productModel->find($params['id']);
 
         // dump($params);
-        // dump($product);
+        dump($product);
         // dump($productModel->findAll());
 
-        $this->show('product.details');
+        $this->show('product.details', [
+            'product' => $product
+        ]);
     }
 }
