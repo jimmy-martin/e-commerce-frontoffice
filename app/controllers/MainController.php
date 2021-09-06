@@ -1,6 +1,6 @@
 <?php
 
-class MainController
+class MainController extends CoreController
 {
     public function home()
     {
@@ -60,13 +60,4 @@ class MainController
         dump(find(1), findAll());
     }
 
-    public function show($viewName, $viewVars = [])
-    {
-        global $router;
-        dump($viewVars);
-        $absoluteURL = $_SERVER['BASE_URI'];
-        require_once __DIR__ . '/../views/partials/header.tpl.php';
-        require_once __DIR__ . '/../views/' . $viewName . '.tpl.php';
-        require_once __DIR__ . '/../views/partials/footer.tpl.php';
-    }
 }

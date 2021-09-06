@@ -16,6 +16,7 @@ require_once __DIR__ . '/../app/models/Category.php';
 
 
 // Controllers
+require_once __DIR__ . '/../app/controllers/CoreController.php';
 require_once __DIR__ . '/../app/controllers/MainController.php';
 require_once __DIR__ . '/../app/controllers/CatalogController.php';
 

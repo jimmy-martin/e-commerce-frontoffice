@@ -2,7 +2,7 @@
 
 // Je vais utiliser l'héritage afin de ne pas recoder ma fonction show
 // qui est déja codé dans MainController
-class CatalogController extends MainController
+class CatalogController extends CoreController
 {
 
     public function category($params)
