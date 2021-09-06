@@ -4,13 +4,11 @@ class MainController extends CoreController
 {
     public function home()
     {
-        $brandModel = new Brand();
-        $footerBrands = $brandModel->findForFooter();
+        // $brandModel = new Brand();
+        // $footerBrands = $brandModel->findForFooter();
 
         // Je met les marques a mettre dans mon footer dans une variable puis je passe cette variable dans le tableau attendu par la fonctiun show
-        $this->show('home', [
-            'footerBrands' => $footerBrands,
-        ]);
+        $this->show('home');
     }
 
     public function legal()
