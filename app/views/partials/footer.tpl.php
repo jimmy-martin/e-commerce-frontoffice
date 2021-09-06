@@ -68,7 +68,7 @@
             </ul>
           </div>
           <div class="col-lg-2 col-md-6 mb-5 mb-lg-0">
-            <h6 class="text-uppercase text-dark mb-3">Produits</h6>
+            <h6 class="text-uppercase text-dark mb-3">Types de produits</h6>
             <ul class="list-unstyled">
               <li> <a href="#" class="text-muted">Chaussures de ville</a></li>
               <li> <a href="#" class="text-muted">Chaussures de sport</a></li>
