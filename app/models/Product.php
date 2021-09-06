@@ -1,23 +1,20 @@
 <?php
 
-class Product
+class Product extends CoreModel
 {
     // =============================================================
     // PROPERTIES
     // =============================================================
 
-    private $id;
-    private $name;
-    private $description;
-    private $picture;
-    private $price;
-    private $rate;
-    private $status;
-    private $created_at;
-    private $updated_at;
-    private $brand_id;
-    private $category_id;
-    private $type_id;
+    protected $description;
+    protected $picture;
+    protected $price;
+    protected $rate;
+    protected $status;
+
+    protected $brand_id;
+    protected $category_id;
+    protected $type_id;
 
     // =============================================================
     // METHODS
@@ -64,34 +61,6 @@ class Product
     // GETTERS & SETTERS
     // =============================================================
     #region getters & setters // permet de pouvoir reduire par la suite une partie du code
-
-    /**
-     * Get the value of id
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Get the value of name
-     */ 
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Set the value of name
-     *
-     * @return  self
-     */ 
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
 
     /**
      * Get the value of description
@@ -189,46 +158,6 @@ class Product
     public function setStatus($status)
     {
         $this->status = $status;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of created_at
-     */ 
-    public function getCreatedAt()
-    {
-        return $this->created_at;
-    }
-
-    /**
-     * Set the value of created_at
-     *
-     * @return  self
-     */ 
-    public function setCreatedAt($created_at)
-    {
-        $this->created_at = $created_at;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of updated_at
-     */ 
-    public function getUpdatedAt()
-    {
-        return $this->updated_at;
-    }
-
-    /**
-     * Set the value of updated_at
-     *
-     * @return  self
-     */ 
-    public function setUpdatedAt($updated_at)
-    {
-        $this->updated_at = $updated_at;
 
         return $this;
     }
