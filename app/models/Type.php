@@ -41,6 +41,27 @@ class Type extends CoreModel
         return $allTypeObjects;
     }
 
+    /**
+     * FInd all Types in footer
+     *
+     * @return self []
+     */
+    public function findForFooter()
+    {
+        $pdo = Database::getPDO();
+        $sql = '
+            SELECT * 
+            FROM `type`
+            WHERE `footer_order` != 0
+            ORDER BY `footer_order`
+            LIMIT 5
+        ';
+        $statement = $pdo->query($sql);
+        $allBrandObjects = $statement->fetchAll(PDO::FETCH_CLASS, 'Type');
+
+        return $allBrandObjects;
+    }
+
     // =============================================================
     // GETTERS & SETTERS
     // =============================================================
