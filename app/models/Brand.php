@@ -16,7 +16,7 @@ class Brand extends CoreModel
      * Return a brand by id
      *
      * @param [int] $id ID of the searched Brand in database
-     * @return [object] $brandObject
+     * @return self [object] $brandObject
      */
     public function find($id)
     {
@@ -41,7 +41,7 @@ class Brand extends CoreModel
     /**
      * Return all the brands
      *
-     * @return [object] $allBrandObjects
+     * @return self[] [object] $allBrandObjects
      */
     public function findAll()
     {
@@ -58,6 +58,27 @@ class Brand extends CoreModel
         // Je recupere le resultat de la requete
         // dans un tableau d'objets de type Brand (grace a fetchObject)
         // avec les valeurs trouvées dans la bdd
+        $allBrandObjects = $statement->fetchAll(PDO::FETCH_CLASS, 'Brand');
+
+        return $allBrandObjects;
+    }
+
+    /**
+     * FInd all Brands in footer
+     *
+     * @return self []
+     */
+    public function findForFooter()
+    {
+        $pdo = Database::getPDO();
+        $sql = '
+            SELECT * 
+            FROM `brand`
+            WHERE `footer_order` != 0
+            ORDER BY `footer_order`
+            LIMIT 5
+        ';
+        $statement = $pdo->query($sql);
         $allBrandObjects = $statement->fetchAll(PDO::FETCH_CLASS, 'Brand');
 
         return $allBrandObjects;

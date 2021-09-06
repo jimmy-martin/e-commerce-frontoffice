@@ -4,7 +4,13 @@ class MainController
 {
     public function home()
     {
-        $this->show('home');
+        $brandModel = new Brand();
+        $footerBrands = $brandModel->findForFooter();
+
+        // Je met les marques a mettre dans mon footer dans une variable puis je passe cette variable dans le tableau attendu par la fonctiun show
+        $this->show('home', [
+            'footerBrands' => $footerBrands,
+        ]);
     }
 
     public function legal()
@@ -56,6 +62,7 @@ class MainController
 
     public function show($viewName, $viewVars = [])
     {
+        dump($viewVars);
         $absoluteURL = $_SERVER['BASE_URI'];
         require_once __DIR__ . '/../views/partials/header.tpl.php';
         require_once __DIR__ . '/../views/' . $viewName . '.tpl.php';

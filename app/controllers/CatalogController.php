@@ -10,9 +10,9 @@ class CatalogController extends MainController
         $categoryModel = new Brand();
         $category = $categoryModel->find($params['id']);
 
-        dump($params);
-        dump($category);
-        dump($categoryModel->findAll());
+        // dump($params);
+        // dump($category);
+        // dump($categoryModel->findAll());
 
         $this->show('product.list');
     }
@@ -22,9 +22,9 @@ class CatalogController extends MainController
         $typeModel = new Type();
         $type = $typeModel->find($params['id']);
 
-        dump($params);
-        dump($type);
-        dump($typeModel->findAll());
+        // dump($params);
+        // dump($type);
+        // dump($typeModel->findAll());
 
         $this->show('product.list');
     }
@@ -41,9 +41,9 @@ class CatalogController extends MainController
         $brandModel = new Brand();
         $brand = $brandModel->find($params['id']);
 
-        dump($params);
-        dump($brand);
-        dump($brandModel->findAll());
+        // dump($params);
+        // dump($brand);
+        // dump($brandModel->findAll());
 
         $this->show('product.list');
     }
@@ -53,9 +53,9 @@ class CatalogController extends MainController
         $productModel = new Product();
         $product = $productModel->find($params['id']);
 
-        dump($params);
-        dump($product);
-        dump($productModel->findAll());
+        // dump($params);
+        // dump($product);
+        // dump($productModel->findAll());
 
         $this->show('product.details');
     }
