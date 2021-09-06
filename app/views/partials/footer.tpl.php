@@ -82,7 +82,11 @@
           <ul class="list-unstyled">
 
             <?php foreach ($viewVars['footerBrands'] as $brand) : ?>
-              <li> <a href="#" class="text-muted"><?= $brand->getName() ?></a></li>
+              <li>
+                <a href="<?= $router->generate('catalog-brand', ['id' => $brand->getId()]) ?>" class="text-muted">
+                  <?= $brand->getName() ?>
+                </a>
+              </li>
             <?php endforeach ?>
 
           </ul>

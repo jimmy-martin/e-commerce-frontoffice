@@ -62,6 +62,7 @@ class MainController
 
     public function show($viewName, $viewVars = [])
     {
+        global $router;
         dump($viewVars);
         $absoluteURL = $_SERVER['BASE_URI'];
         require_once __DIR__ . '/../views/partials/header.tpl.php';
