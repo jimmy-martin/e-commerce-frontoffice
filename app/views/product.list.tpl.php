@@ -3,15 +3,14 @@
       <!-- Breadcrumbs -->
       <ol class="breadcrumb justify-content-center">
         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-        <li class="breadcrumb-item active">Détente</li>
+        <li class="breadcrumb-item active"><?= $listName->getName() ?></li>
       </ol>
       <!-- Hero Content-->
       <div class="hero-content pb-5 text-center">
-        <h1 class="hero-heading">Détente</h1>
+        <h1 class="hero-heading"><?= $listName->getName() ?></h1>
         <div class="row">
           <div class="col-xl-8 offset-xl-2">
-            <p class="lead text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-              incididunt.</p>
+            <p class="lead text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
           </div>
         </div>
       </div>
@@ -23,7 +22,7 @@
 
       <header class="product-grid-header d-flex align-items-center justify-content-between">
         <div class="mr-3 mb-3">
-          Affichage <strong>1-12 </strong>de <strong>158 </strong>résultats
+          Affichage <strong>1-12 </strong>de <strong><?= count($products) ?> </strong>résultats
         </div>
         <div class="mr-3 mb-3"><span class="mr-2">Voir</span><a href="#" class="product-grid-header-show active">12
           </a><a href="#" class="product-grid-header-show ">24 </a><a href="#" class="product-grid-header-show ">Tout
@@ -40,10 +39,11 @@
       </header>
       <div class="row">
         <!-- product-->
+        <?php foreach($products as $product) :?>
         <div class="product col-xl-3 col-lg-4 col-sm-6">
           <div class="product-image">
             <a href="detail.html" class="product-hover-overlay-link">
-              <img src="<?= $absoluteURL ?>/assets/images/produits/1-kiss_tn.jpg" alt="product" class="img-fluid">
+              <img src="<?= $absoluteURL ?>/<?= $product->getPicture() ?>" alt="product" class="img-fluid">
             </a>
           </div>
           <div class="product-action-buttons">
@@ -52,71 +52,11 @@
                 class="btn-buy-label ml-2">Voir</span></a>
           </div>
           <div class="py-2">
-            <p class="text-muted text-sm mb-1">Chausson</p>
-            <h3 class="h6 text-uppercase mb-1"><a href="detail.html" class="text-dark">Kissing</a></h3><span
-              class="text-muted">40€</span>
+            <p class="text-muted text-sm mb-1"><?= $type->find($product->getTypeID())->getName() ?></p>
+            <h3 class="h6 text-uppercase mb-1"><a href="detail.html" class="text-dark"><?= $product->getName() ?></a></h3><span
+              class="text-muted"><?= $product->getPrice() ?>€</span>
           </div>
         </div>
-        <!-- /product-->
-        <!-- product-->
-        <div class="product col-xl-3 col-lg-4 col-sm-6">
-          <div class="product-image">
-            <a href="detail.html" class="product-hover-overlay-link">
-              <img src="<?= $absoluteURL ?>/assets/images/produits/2-rose_tn.jpg" alt="product" class="img-fluid">
-            </a>
-          </div>
-          <div class="product-action-buttons">
-            <a href="#" class="btn btn-outline-dark btn-product-left"><i class="fa fa-shopping-cart"></i></a>
-            <a href="detail.html" class="btn btn-dark btn-buy"><i class="fa-search fa"></i><span
-                class="btn-buy-label ml-2">Voir</span></a>
-          </div>
-          <div class="py-2">
-            <p class="text-muted text-sm mb-1">Tong</p>
-            <h3 class="h6 text-uppercase mb-1"><a href="detail.html" class="text-dark">Pink lady</a></h3><span
-              class="text-muted">20€</span>
-          </div>
-        </div>
-        <!-- /product-->
-        <!-- product-->
-        <div class="product col-xl-3 col-lg-4 col-sm-6">
-          <div class="product-image">
-            <a href="detail.html" class="product-hover-overlay-link">
-              <img src="<?= $absoluteURL ?>/assets/images/produits/3-panda_tn.jpg" alt="product" class="img-fluid">
-            </a>
-          </div>
-          <div class="product-action-buttons">
-            <a href="#" class="btn btn-outline-dark btn-product-left"><i class="fa fa-shopping-cart"></i></a>
-            <a href="detail.html" class="btn btn-dark btn-buy"><i class="fa-search fa"></i><span
-                class="btn-buy-label ml-2">Voir</span></a>
-          </div>
-          <div class="py-2">
-            <p class="text-muted text-sm mb-1">Chausson</p>
-            <h3 class="h6 text-uppercase mb-1"><a href="detail.html" class="text-dark">Panda</a></h3><span
-              class="text-muted">50€</span>
-          </div>
-        </div>
-        <!-- /product-->
-        <!-- product-->
-        <div class="product col-xl-3 col-lg-4 col-sm-6">
-          <div class="product-image">
-            <a href="detail.html" class="product-hover-overlay-link">
-              <img src="<?= $absoluteURL ?>/assets/images/produits/20-deadpool_tn.jpg" alt="product" class="img-fluid">
-            </a>
-          </div>
-          <div class="product-action-buttons">
-            <a href="#" class="btn btn-outline-dark btn-product-left"><i class="fa fa-shopping-cart"></i></a>
-            <a href="detail.html" class="btn btn-dark btn-buy"><i class="fa-search fa"></i><span
-                class="btn-buy-label ml-2">Voir</span></a>
-          </div>
-          <div class="py-2">
-            <p class="text-muted text-sm mb-1">Pantoufle</p>
-            <h3 class="h6 text-uppercase mb-1"><a href="detail.html" class="text-dark">Deadpool</a></h3><span
-              class="text-muted">15€</span>
-          </div>
-        </div>
-        <!-- /product-->
-
-      </div>
-
+        <?php endforeach?>
     </div>
   </section>

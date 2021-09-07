@@ -62,6 +62,28 @@ class Product extends CoreModel
         return $allProductObjects;
     }
 
+    /**
+     * Return all the products
+     *
+     * @return [object] $allProductObjects
+     */
+    public function findForBrand($id)
+    {
+        $pdo = Database::getPDO();
+
+        $sql = 'SELECT * 
+        FROM `product`
+        WHERE `brand_id` = '. $id;
+
+        $statement = $pdo->query($sql);
+
+        $allProductObjects = $statement->fetchAll(PDO::FETCH_CLASS, self::class);
+
+        return $allProductObjects;
+    }
+
+
+
     // =============================================================
     // GETTERS & SETTERS
     // =============================================================
@@ -167,4 +189,12 @@ class Product extends CoreModel
         return $this;
     }
     #endregion
+
+    /**
+     * Get the value of type_id
+     */ 
+    public function getTypeId()
+    {
+        return $this->type_id;
+    }
 }

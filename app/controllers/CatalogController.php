@@ -46,13 +46,21 @@ class CatalogController extends CoreController
         // J'instancie ma classe brand
         // pour pouvoir appeler sa méthode find()
         $brandModel = new Brand();
+        $productModel = new Product();
+        $typeModel = new Type();
+
         $brand = $brandModel->find($params['id']);
+        $brandProducts = $productModel->findForBrand($params['id']);
 
         // dump($params);
         // dump($brand);
         // dump($brandModel->findAll());
 
-        $this->show('product.list');
+        $this->show('product.list', [
+            'listName' => $brand,
+            'products' => $brandProducts,
+            'type' => $typeModel,
+        ]);
     }
 
     public function product($params)
