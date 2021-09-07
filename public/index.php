@@ -4,21 +4,7 @@
 // grace a autoload.php créé par Composer
 require_once __DIR__ . '/../vendor/autoload.php';
 
-// Utils
-require_once __DIR__ . '/../app/utils/Database.php';
 
-// Models
-require_once __DIR__ . '/../app/models/CoreModel.php';
-require_once __DIR__ . '/../app/models/Brand.php';
-require_once __DIR__ . '/../app/models/Product.php';
-require_once __DIR__ . '/../app/models/Type.php';
-require_once __DIR__ . '/../app/models/Category.php';
-
-
-// Controllers
-require_once __DIR__ . '/../app/controllers/CoreController.php';
-require_once __DIR__ . '/../app/controllers/MainController.php';
-require_once __DIR__ . '/../app/controllers/CatalogController.php';
 
 //=============================================================
 // ROUTER
@@ -40,7 +26,7 @@ $router->setBasePath($_SERVER['BASE_URI']);
 $router->map(
     'GET',  //! 1: Methode http (plupart du temps get)
     '/', //! 2: url de la route (sans la partie fixe)
-    ['controller' => 'MainController', 'method' => 'home',], //! 3: tableau qui stocke le nom du controller et la methode necessaire au fonctionnement du dispatcher
+    ['controller' => '\\app\\controllers\\MainController', 'method' => 'home',], //! 3: tableau qui stocke le nom du controller et la methode necessaire au fonctionnement du dispatcher
     'main-home' //! 4 (optionnel): Nom unique de la route (on utilise une convention de nommage: '{nom_du_controller}-{nom_de_la_route}')
 );
 
@@ -50,37 +36,37 @@ $router->addRoutes([
     [
         'GET',
         '/legal',
-        ['controller' => 'MainController', 'method' => 'legal',],
+        ['controller' => '\\app\\controllers\\MainController', 'method' => 'legal',],
         'main-legal'
     ],
     [
         'GET',
         '/catalog/category/[i:id]',
-        ['controller' => 'CatalogController', 'method' => 'category',],
+        ['controller' => '\\app\\controllers\\CatalogController', 'method' => 'category',],
         'catalog-category'
     ],
     [
         'GET',
         '/catalog/type/[i:id]',
-        ['controller' => 'CatalogController', 'method' => 'type',],
+        ['controller' => '\\app\\controllers\\CatalogController', 'method' => 'type',],
         'catalog-type'
     ],
     [
         'GET',
         '/catalog/brand/[i:id]',
-        ['controller' => 'CatalogController', 'method' => 'brand',],
+        ['controller' => '\\app\\controllers\\CatalogController', 'method' => 'brand',],
         'catalog-brand'
     ],
     [
         'GET',
         '/catalog/product/[i:id]',
-        ['controller' => 'CatalogController', 'method' => 'product',],
+        ['controller' => '\\app\\controllers\\CatalogController', 'method' => 'product',],
         'catalog-product'
     ],
     [
         'GET',
         '/test',
-        ['controller' => 'MainController', 'method' => 'test',],
+        ['controller' => '\\app\\controllers\\MainController', 'method' => 'test',],
         'main-test'
     ]
 ]);

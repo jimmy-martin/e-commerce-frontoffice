@@ -1,5 +1,10 @@
 <?php
 
+namespace app\models;
+
+use app\utils\Database;
+use PDO;
+
 class CoreModel
 {
     // Properties 
@@ -14,7 +19,7 @@ class CoreModel
 
     /**
      * Get the value of id
-     */ 
+     */
     public function getId()
     {
         return $this->id;
@@ -22,7 +27,7 @@ class CoreModel
 
     /**
      * Get the value of name
-     */ 
+     */
     public function getName()
     {
         return $this->name;
@@ -32,7 +37,7 @@ class CoreModel
      * Set the value of name
      *
      * @return  self
-     */ 
+     */
     public function setName($name)
     {
         $this->name = $name;
@@ -42,7 +47,7 @@ class CoreModel
 
     /**
      * Get the value of created_at
-     */ 
+     */
     public function getCreatedAt()
     {
         return $this->created_at;
@@ -52,7 +57,7 @@ class CoreModel
      * Set the value of created_at
      *
      * @return  self
-     */ 
+     */
     public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
@@ -62,7 +67,7 @@ class CoreModel
 
     /**
      * Get the value of updated_at
-     */ 
+     */
     public function getUpdatedAt()
     {
         return $this->updated_at;
@@ -72,7 +77,7 @@ class CoreModel
      * Set the value of updated_at
      *
      * @return  self
-     */ 
+     */
     public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;

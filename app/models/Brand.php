@@ -1,5 +1,10 @@
 <?php
 
+namespace app\models;
+
+use app\utils\Database;
+use PDO;
+
 class Brand extends CoreModel
 {
     // =============================================================
@@ -33,7 +38,7 @@ class Brand extends CoreModel
         // Je recupere le resultat de la requete
         // dans un objet de type Brand (grace a fetchObject)
         // avec les valeurs trouvées dans la bdd
-        $brandObject = $statement->fetchObject('Brand');
+        $brandObject = $statement->fetchObject(self::class);
 
         return $brandObject;
     }
@@ -58,7 +63,7 @@ class Brand extends CoreModel
         // Je recupere le resultat de la requete
         // dans un tableau d'objets de type Brand (grace a fetchObject)
         // avec les valeurs trouvées dans la bdd
-        $allBrandObjects = $statement->fetchAll(PDO::FETCH_CLASS, 'Brand');
+        $allBrandObjects = $statement->fetchAll(PDO::FETCH_CLASS, self::class);
 
         return $allBrandObjects;
     }
@@ -79,7 +84,7 @@ class Brand extends CoreModel
             LIMIT 5
         ';
         $statement = $pdo->query($sql);
-        $allBrandObjects = $statement->fetchAll(PDO::FETCH_CLASS, 'Brand');
+        $allBrandObjects = $statement->fetchAll(PDO::FETCH_CLASS, self::class);
 
         return $allBrandObjects;
     }

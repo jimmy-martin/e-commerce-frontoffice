@@ -1,5 +1,10 @@
 <?php
 
+namespace app\controllers;
+
+use PDO;
+use app\utils\Database;
+
 class MainController extends CoreController
 {
     public function home()

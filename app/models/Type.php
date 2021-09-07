@@ -1,5 +1,10 @@
 <?php
 
+namespace app\models;
+
+use app\utils\Database;
+use PDO;
+
 class Type extends CoreModel
 {
     // =============================================================
@@ -23,7 +28,7 @@ class Type extends CoreModel
         $pdo = Database::getPDO();
         $sql = 'SELECT * FROM `type` WHERE `id` = ' . $id;
         $statement = $pdo->query($sql);
-        $typeObject = $statement->fetchObject('Type');
+        $typeObject = $statement->fetchObject(self::class);
         return $typeObject;
     }
 
@@ -37,7 +42,7 @@ class Type extends CoreModel
         $pdo = Database::getPDO();
         $sql = 'SELECT * FROM `type`';
         $statement = $pdo->query($sql);
-        $allTypeObjects = $statement->fetchAll(PDO::FETCH_CLASS, 'Type');
+        $allTypeObjects = $statement->fetchAll(PDO::FETCH_CLASS, self::class);
         return $allTypeObjects;
     }
 
@@ -57,7 +62,7 @@ class Type extends CoreModel
             LIMIT 5
         ';
         $statement = $pdo->query($sql);
-        $allBrandObjects = $statement->fetchAll(PDO::FETCH_CLASS, 'Type');
+        $allBrandObjects = $statement->fetchAll(PDO::FETCH_CLASS, self::class);
 
         return $allBrandObjects;
     }

@@ -1,5 +1,11 @@
 <?php
 
+namespace app\controllers;
+
+use app\models\Brand;
+use app\models\Type;
+use app\models\Product;
+
 // Je vais utiliser l'héritage afin de ne pas recoder ma fonction show
 // qui est déja codé dans CoreController
 class CatalogController extends CoreController

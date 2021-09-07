@@ -1,5 +1,10 @@
 <?php
 
+namespace app\models;
+
+use app\utils\Database;
+use PDO;
+
 class Category extends CoreModel
 {
     // =============================================================
@@ -25,7 +30,7 @@ class Category extends CoreModel
         $pdo = Database::getPDO();
         $sql = 'SELECT * FROM `category` WHERE `id` = ' . $id;
         $statement = $pdo->query($sql);
-        $categoryObject = $statement->fetchObject('Category');
+        $categoryObject = $statement->fetchObject(self::class);
         return $categoryObject;
     }
 
@@ -39,7 +44,7 @@ class Category extends CoreModel
         $pdo = Database::getPDO();
         $sql = 'SELECT * FROM `category`';
         $statement = $pdo->query($sql);
-        $allCategoriesObjects = $statement->fetchAll(PDO::FETCH_CLASS, 'Category');
+        $allCategoriesObjects = $statement->fetchAll(PDO::FETCH_CLASS, self::class);
         return $allCategoriesObjects;
     }
 
@@ -50,7 +55,7 @@ class Category extends CoreModel
 
     /**
      * Get the value of subtitle
-     */ 
+     */
     public function getSubtitle()
     {
         return $this->subtitle;
@@ -60,7 +65,7 @@ class Category extends CoreModel
      * Set the value of subtitle
      *
      * @return  self
-     */ 
+     */
     public function setSubtitle($subtitle)
     {
         $this->subtitle = $subtitle;
@@ -70,7 +75,7 @@ class Category extends CoreModel
 
     /**
      * Get the value of picture
-     */ 
+     */
     public function getPicture()
     {
         return $this->picture;
@@ -80,7 +85,7 @@ class Category extends CoreModel
      * Set the value of picture
      *
      * @return  self
-     */ 
+     */
     public function setPicture($picture)
     {
         $this->picture = $picture;
@@ -90,7 +95,7 @@ class Category extends CoreModel
 
     /**
      * Get the value of home_order
-     */ 
+     */
     public function getHomeOrder()
     {
         return $this->home_order;
@@ -100,7 +105,7 @@ class Category extends CoreModel
      * Set the value of home_order
      *
      * @return  self
-     */ 
+     */
     public function setHomeOrder($home_order)
     {
         $this->home_order = $home_order;

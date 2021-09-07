@@ -1,5 +1,10 @@
 <?php
 
+namespace app\controllers;
+
+use app\models\Brand;
+use app\models\Type;
+
 class CoreController
 {
     /**
@@ -30,7 +35,7 @@ class CoreController
         $typeModel = new Type();
         $footerTypes = $typeModel->findForFooter();
         $viewVars['footerTypes'] = $footerTypes;
-        
+
         // grace a extract() nos données seront donc sous cette forme:
         // $footerBrands = ...
         // $footertypes = ...

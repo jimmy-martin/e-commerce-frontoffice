@@ -1,5 +1,10 @@
 <?php
 
+namespace app\models;
+
+use app\utils\Database;
+use PDO;
+
 class Product extends CoreModel
 {
     // =============================================================
@@ -27,14 +32,14 @@ class Product extends CoreModel
      * @return [object] $productObject
      */
     public function find($id)
-    {        
+    {
         $pdo = Database::getPDO();
 
         $sql = 'SELECT * FROM `product` WHERE `id` = ' . $id;
 
         $statement = $pdo->query($sql);
 
-        $productObject = $statement->fetchObject('Product');
+        $productObject = $statement->fetchObject(self::class);
 
         return $productObject;
     }
@@ -52,7 +57,7 @@ class Product extends CoreModel
 
         $statement = $pdo->query($sql);
 
-        $allProductObjects = $statement->fetchAll(PDO::FETCH_CLASS, 'Product');
+        $allProductObjects = $statement->fetchAll(PDO::FETCH_CLASS, self::class);
 
         return $allProductObjects;
     }
@@ -64,7 +69,7 @@ class Product extends CoreModel
 
     /**
      * Get the value of description
-     */ 
+     */
     public function getDescription()
     {
         return $this->description;
@@ -74,7 +79,7 @@ class Product extends CoreModel
      * Set the value of description
      *
      * @return  self
-     */ 
+     */
     public function setDescription($description)
     {
         $this->description = $description;
@@ -84,7 +89,7 @@ class Product extends CoreModel
 
     /**
      * Get the value of picture
-     */ 
+     */
     public function getPicture()
     {
         return $this->picture;
@@ -94,7 +99,7 @@ class Product extends CoreModel
      * Set the value of picture
      *
      * @return  self
-     */ 
+     */
     public function setPicture($picture)
     {
         $this->picture = $picture;
@@ -104,7 +109,7 @@ class Product extends CoreModel
 
     /**
      * Get the value of price
-     */ 
+     */
     public function getPrice()
     {
         return $this->price;
@@ -114,7 +119,7 @@ class Product extends CoreModel
      * Set the value of price
      *
      * @return  self
-     */ 
+     */
     public function setPrice($price)
     {
         $this->price = $price;
@@ -124,7 +129,7 @@ class Product extends CoreModel
 
     /**
      * Get the value of rate
-     */ 
+     */
     public function getRate()
     {
         return $this->rate;
@@ -134,7 +139,7 @@ class Product extends CoreModel
      * Set the value of rate
      *
      * @return  self
-     */ 
+     */
     public function setRate($rate)
     {
         $this->rate = $rate;
@@ -144,7 +149,7 @@ class Product extends CoreModel
 
     /**
      * Get the value of status
-     */ 
+     */
     public function getStatus()
     {
         return $this->status;
@@ -154,7 +159,7 @@ class Product extends CoreModel
      * Set the value of status
      *
      * @return  self
-     */ 
+     */
     public function setStatus($status)
     {
         $this->status = $status;
