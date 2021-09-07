@@ -70,7 +70,7 @@
         <div class="col-lg-2 col-md-6 mb-5 mb-lg-0">
           <h6 class="text-uppercase text-dark mb-3">Types de produits</h6>
           <ul class="list-unstyled">
-            <?php foreach($viewVars['footerTypes'] as $type) : ?>
+            <?php foreach($footerTypes as $type) : ?>
             <li>
               <a href="<?= $router->generate('catalog-type', ['id' => $type->getId()]) ?>" class="text-muted">
                 <?= $type->getName() ?>
@@ -83,7 +83,7 @@
           <h6 class="text-uppercase text-dark mb-3">Marques</h6>
           <ul class="list-unstyled">
 
-            <?php foreach ($viewVars['footerBrands'] as $brand) : ?>
+            <?php foreach ($footerBrands as $brand) : ?>
               <li>
                 <a href="<?= $router->generate('catalog-brand', ['id' => $brand->getId()]) ?>" class="text-muted">
                   <?= $brand->getName() ?>
