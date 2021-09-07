@@ -2,6 +2,13 @@
 
 class CoreController
 {
+    /**
+     * Methode permettant d'afficher nos vues
+     *
+     * @param string $viewName
+     * @param array $viewVars
+     * @return void
+     */
     protected function show($viewName, $viewVars = [])
     {
         global $router;        
@@ -13,6 +20,7 @@ class CoreController
         $typeModel = new Type();
         $footerTypes = $typeModel->findForFooter();
         $viewVars['footerTypes'] = $footerTypes;
+
         dump($viewVars);
 
         $absoluteURL = $_SERVER['BASE_URI'];
