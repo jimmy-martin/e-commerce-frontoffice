@@ -228,4 +228,12 @@ class Product extends CoreModel
     {
         return $this->type_id;
     }
+
+    /**
+     * Get the value of brand_id
+     */ 
+    public function getBrandId()
+    {
+        return $this->brand_id;
+    }
 }
