@@ -236,4 +236,12 @@ class Product extends CoreModel
     {
         return $this->brand_id;
     }
+
+    /**
+     * Get the value of category_id
+     */ 
+    public function getCategoryId()
+    {
+        return $this->category_id;
+    }
 }

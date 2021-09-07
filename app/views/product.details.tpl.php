@@ -2,8 +2,8 @@
   <div class="container">
     <!-- Breadcrumbs -->
     <ol class="breadcrumb justify-content-center">
-      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-      <li class="breadcrumb-item active">Détente</li>
+      <li class="breadcrumb-item"><a href="<?= $router->generate('main-home') ?>">Home</a></li>
+      <li class="breadcrumb-item active"><?= $category->find($product->getCategoryId())->getName() ?></li>
     </ol>
   </div>
 </section>
@@ -15,7 +15,7 @@
       <!-- product-->
       <div class="col-lg-6 col-sm-12">
         <div class="product-image">
-          <a href="detail.html" class="product-hover-overlay-link">
+          <a href="<?= $router->generate('catalog-product', ['id' => $brand->getId()]) ?>" class="product-hover-overlay-link">
             <img src="<?= $absoluteURL ?>/<?= $product->getPicture() ?>" alt="product" class="img-fluid">
           </a>
         </div>

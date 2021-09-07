@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\Brand;
+use app\models\Category;
 use app\models\Type;
 
 class CoreController
@@ -17,6 +18,7 @@ class CoreController
     protected function show($viewName, $viewVars = [])
     {
         global $router;
+        // dump($router);
 
         // Pour chaque clé du tableau $viewVars, 
         // On va créer une variable du nom de la clé
