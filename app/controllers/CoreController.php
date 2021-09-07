@@ -30,7 +30,6 @@ class CoreController
         $typeModel = new Type();
         $footerTypes = $typeModel->findForFooter();
         $viewVars['footerTypes'] = $footerTypes;
-        // ===== Affectation des variables dans viewVars =====
         
         // grace a extract() nos données seront donc sous cette forme:
         // $footerBrands = ...
