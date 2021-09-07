@@ -16,18 +16,18 @@
       <div class="col-lg-6 col-sm-12">
         <div class="product-image">
           <a href="detail.html" class="product-hover-overlay-link">
-            <img src="<?= $absoluteURL ?>/<?= $viewVars['product']->getPicture() ?>" alt="product" class="img-fluid">
+            <img src="<?= $absoluteURL ?>/<?= $product->getPicture() ?>" alt="product" class="img-fluid">
           </a>
         </div>
       </div>
       <div class="col-lg-6 col-sm-12">
         <div class="mb-3">
-          <h3 class="h3 text-uppercase mb-1"><?= $viewVars['product']->getName() ?></h3>
+          <h3 class="h3 text-uppercase mb-1"><?= $product->getName() ?></h3>
           <div class="text-muted">by <em>BOOTstrap</em></div>
           <div>
             <!-- Je dynamise l'affichage de la note  -->
             <?php for ($i = 1; $i <= 5; $i++) :
-              if ($i <= $viewVars['product']->getRate()) : ?>
+              if ($i <= $product->getRate()) : ?>
                 <i class="fa fa-star"></i>
               <?php else : ?>
                 <i class="fa fa-star-o"></i>
@@ -36,7 +36,7 @@
           </div>
         </div>
         <div class="my-2">
-          <div class="text-muted"><span class="h4"><?= $viewVars['product']->getPrice() ?> €</span> TTC</div>
+          <div class="text-muted"><span class="h4"><?= $product->getPrice() ?> €</span> TTC</div>
         </div>
         <div class="product-action-buttons">
           <form action="" method="post">
@@ -46,7 +46,7 @@
         </div>
         <div class="mt-5">
           <p>
-            <?= $viewVars['product']->getDescription() ?>
+            <?= $product->getDescription() ?>
           </p>
         </div>
       </div>

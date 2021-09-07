@@ -58,7 +58,7 @@ class CatalogController extends CoreController
         // dump($productModel->findAll());
 
         $this->show('product.details', [
-            'product' => $product
+            'product' => $product,
         ]);
     }
 }

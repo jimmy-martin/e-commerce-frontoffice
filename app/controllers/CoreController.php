@@ -25,14 +25,13 @@ class CoreController
         // ===== Recuperation des marques du footer =====
         $brandModel = new Brand();
         $footerBrands = $brandModel->findForFooter();
+        $viewVars['footerBrands'] = $footerBrands;
         // ===== Recuperation des types du footer =====
         $typeModel = new Type();
         $footerTypes = $typeModel->findForFooter();
+        $viewVars['footerTypes'] = $footerTypes;
         // ===== Affectation des variables dans viewVars =====
-        $viewVars = [
-            'footerBrands' => $footerBrands,
-            'footerTypes' => $footerTypes,
-        ];
+        
         // grace a extract() nos données seront donc sous cette forme:
         // $footerBrands = ...
         // $footertypes = ...
