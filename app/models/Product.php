@@ -82,6 +82,37 @@ class Product extends CoreModel
         return $allProductObjects;
     }
 
+    public function findForCategory($id)
+    {
+        $pdo = Database::getPDO();
+
+        $sql = 'SELECT * 
+        FROM `product`
+        WHERE `category_id` = '. $id;
+
+        $statement = $pdo->query($sql);
+
+        $allProductObjects = $statement->fetchAll(PDO::FETCH_CLASS, self::class);
+
+        return $allProductObjects;
+    }
+
+    public function findForType($id)
+    {
+        $pdo = Database::getPDO();
+
+        $sql = 'SELECT * 
+        FROM `product`
+        WHERE `type_id` = '. $id;
+
+        $statement = $pdo->query($sql);
+
+        $allProductObjects = $statement->fetchAll(PDO::FETCH_CLASS, self::class);
+
+        return $allProductObjects;
+    }
+
+
 
 
     // =============================================================

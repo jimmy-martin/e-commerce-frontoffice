@@ -15,25 +15,40 @@ class CatalogController extends CoreController
     public function category($params)
     {
         $categoryModel = new Category();
+        $productModel = new Product();
+        $typeModel = new Type();
+        
         $category = $categoryModel->find($params['id']);
-
+        $categoryProducts = $productModel->findForCategory($params['id']);
+        
         // dump($params);
         dump($category);
         // dump($categoryModel->findAll());
 
-        $this->show('product.list');
+        $this->show('product.list', [
+            'listName' => $category,
+            'products' => $categoryProducts,
+            'type' => $typeModel,
+        ]);
     }
 
     public function type($params)
     {
         $typeModel = new Type();
+        $productModel = new Product();
+
         $type = $typeModel->find($params['id']);
+        $typeProducts = $productModel->findForType($params['id']);
 
         // dump($params);
         // dump($type);
         // dump($typeModel->findAll());
 
-        $this->show('product.list');
+        $this->show('product.list', [
+            'listName' => $type, 
+            'products' => $typeProducts,
+            'type' => $typeModel, 
+        ]);
     }
 
     /**
