@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\models\Brand;
 use app\models\Type;
 use app\models\Product;
+use app\models\Category;
 
 // Je vais utiliser l'héritage afin de ne pas recoder ma fonction show
 // qui est déja codé dans CoreController
@@ -13,11 +14,11 @@ class CatalogController extends CoreController
 
     public function category($params)
     {
-        $categoryModel = new Brand();
+        $categoryModel = new Category();
         $category = $categoryModel->find($params['id']);
 
         // dump($params);
-        // dump($category);
+        dump($category);
         // dump($categoryModel->findAll());
 
         $this->show('product.list');

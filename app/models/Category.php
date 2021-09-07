@@ -47,6 +47,24 @@ class Category extends CoreModel
         $allCategoriesObjects = $statement->fetchAll(PDO::FETCH_CLASS, self::class);
         return $allCategoriesObjects;
     }
+    /**
+     * Retrun all catgeroies in the home page
+     *
+     * @return self[]
+     */
+    public function findForHome()
+    {
+        $pdo = Database::getPDO();
+        $sql = 'SELECT * 
+        FROM `category`
+        WHERE `home_order` != 0
+        ORDER BY `home_order`
+        LIMIT 5';
+        $statement = $pdo->query($sql);
+        $allCategoriesObjects = $statement->fetchAll(PDO::FETCH_CLASS, self::class);
+        return $allCategoriesObjects;
+    }
+
 
     // =============================================================
     // GETTERS & SETTERS

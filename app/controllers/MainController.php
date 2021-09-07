@@ -4,12 +4,17 @@ namespace app\controllers;
 
 use PDO;
 use app\utils\Database;
+use app\models\Category; 
 
 class MainController extends CoreController
 {
     public function home()
     {
-        $this->show('home');
+
+        $categoryModel = new Category(); 
+        $homeCategories = $categoryModel->findForHome();
+        
+        $this->show('home', ['homeCategories' => $homeCategories]);
     }
 
     public function legal()
