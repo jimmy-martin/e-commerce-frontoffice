@@ -26,8 +26,8 @@
           <div class="text-muted">by <em><?= $brand->find($product->getBrandId())->getName() ?></em></div>
           <div>
             <!-- Je dynamise l'affichage de la note  -->
-            <?php for ($i = 1; $i <= 5; $i++) :
-              if ($i <= $product->getRate()) : ?>
+            <?php for ($note = 1; $note <= 5; $note++) :
+              if ($note <= $product->getRate()) : ?>
                 <i class="fa fa-star"></i>
               <?php else : ?>
                 <i class="fa fa-star-o"></i>
