@@ -157,7 +157,7 @@ class Product extends CoreModel
      */
     public function getPicture()
     {
-        return $this->picture;
+       return $_SERVER['BASE_URI'].'/'.$this->picture;
     }
 
     /**

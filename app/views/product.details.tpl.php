@@ -15,8 +15,8 @@
       <!-- product-->
       <div class="col-lg-6 col-sm-12">
         <div class="product-image">
-          <a href="<?= $router->generate('catalog-product', ['id' => $brand->getId()]) ?>" class="product-hover-overlay-link">
-            <img src="<?= $absoluteURL ?>/<?= $product->getPicture() ?>" alt="product" class="img-fluid">
+          <a href="#" class="product-hover-overlay-link">
+            <img src="<?= $product->getPicture() ?>" alt="product" class="img-fluid">
           </a>
         </div>
       </div>
@@ -26,7 +26,7 @@
           <div class="text-muted">by <em><?= $brand->find($product->getBrandId())->getName() ?></em></div>
           <div>
             <!-- Je dynamise l'affichage de la note  -->
-            <?php for ($note = 1; $note <= 5; $note++) :
+            <?php for ($note = 0; $note < 5; $note++) :
               if ($note <= $product->getRate()) : ?>
                 <i class="fa fa-star"></i>
               <?php else : ?>
