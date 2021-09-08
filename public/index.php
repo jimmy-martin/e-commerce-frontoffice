@@ -40,6 +40,12 @@ $router->addRoutes([
     ],
     [
         'GET',
+        '/bucket',
+        ['controller' => '\\app\\controllers\\MainController', 'method' => 'bucket',],
+        'main-bucket'
+    ],
+    [
+        'GET',
         '/catalog/category/[i:id]',
         ['controller' => '\\app\\controllers\\CatalogController', 'method' => 'category',],
         'catalog-category'
