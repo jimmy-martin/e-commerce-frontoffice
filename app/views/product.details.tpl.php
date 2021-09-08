@@ -3,7 +3,7 @@
     <!-- Breadcrumbs -->
     <ol class="breadcrumb justify-content-center">
       <li class="breadcrumb-item"><a href="<?= $router->generate('main-home') ?>">Home</a></li>
-      <li class="breadcrumb-item active"><?= $category->find($product->getCategoryId())->getName() ?></li>
+      <li class="breadcrumb-item active"><a href="<?= $router->generate('catalog-category', ['id' => $category->find($product->getCategoryId())->getId()]) ?>"><?= $category->find($product->getCategoryId())->getName() ?></a></li>
     </ol>
   </div>
 </section>
