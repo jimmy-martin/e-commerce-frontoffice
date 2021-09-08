@@ -56,10 +56,11 @@ class Category extends CoreModel
     {
         $pdo = Database::getPDO();
         $sql = 'SELECT * 
-        FROM `category`
-        WHERE `home_order` != 0
-        ORDER BY `home_order`
-        LIMIT 5';
+                FROM `category`
+                WHERE `home_order` != 0
+                ORDER BY `home_order`
+                LIMIT 5
+        ';
         $statement = $pdo->query($sql);
         $allCategoriesObjects = $statement->fetchAll(PDO::FETCH_CLASS, self::class);
         return $allCategoriesObjects;
@@ -96,7 +97,7 @@ class Category extends CoreModel
      */
     public function getPicture()
     {
-        return $this->picture;
+        return $_SERVER['BASE_URI']."/".$this->picture;
     }
 
     /**
