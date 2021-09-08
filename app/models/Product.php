@@ -73,7 +73,7 @@ class Product extends CoreModel
 
         $sql = 'SELECT * 
         FROM `product`
-        WHERE `brand_id` = '. $id;
+        WHERE `brand_id` = ' . $id;
 
         $statement = $pdo->query($sql);
 
@@ -88,7 +88,7 @@ class Product extends CoreModel
 
         $sql = 'SELECT * 
         FROM `product`
-        WHERE `category_id` = '. $id;
+        WHERE `category_id` = ' . $id;
 
         $statement = $pdo->query($sql);
 
@@ -103,7 +103,7 @@ class Product extends CoreModel
 
         $sql = 'SELECT * 
         FROM `product`
-        WHERE `type_id` = '. $id;
+        WHERE `type_id` = ' . $id;
 
         $statement = $pdo->query($sql);
 
@@ -112,7 +112,19 @@ class Product extends CoreModel
         return $allProductObjects;
     }
 
+    // public function addToCart($product)
+    // {
+    //     $pdo = Database::getPDO();
 
+    //     $sql = "INSERT INTO `bucket` (`name`, `picture`, `price`, `quantity`, `total`) VALUES ('{$product->getName()}', '{$product->getPicture()}','{$product->getPrice()}', 1, {$product->getPrice()})";
+
+    //     $statement = $pdo->exec($sql);
+    //     if ($statement === 1) {
+    //         header('Location: index.php');
+    //         exit();
+    //     }
+    //     exit('Une erreur s\'est produite !');
+    // }
 
 
     // =============================================================
@@ -223,7 +235,7 @@ class Product extends CoreModel
 
     /**
      * Get the value of type_id
-     */ 
+     */
     public function getTypeId()
     {
         return $this->type_id;
@@ -231,7 +243,7 @@ class Product extends CoreModel
 
     /**
      * Get the value of brand_id
-     */ 
+     */
     public function getBrandId()
     {
         return $this->brand_id;
@@ -239,7 +251,7 @@ class Product extends CoreModel
 
     /**
      * Get the value of category_id
-     */ 
+     */
     public function getCategoryId()
     {
         return $this->category_id;

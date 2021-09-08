@@ -4,22 +4,35 @@ namespace app\controllers;
 
 use PDO;
 use app\utils\Database;
-use app\models\Category; 
+use app\models\Category;
+use app\models\Bucket;
 
 class MainController extends CoreController
 {
     public function home()
     {
 
-        $categoryModel = new Category(); 
+        $categoryModel = new Category();
         $homeCategories = $categoryModel->findForHome();
-        
+
         $this->show('home', ['homeCategories' => $homeCategories]);
     }
 
     public function legal()
     {
         $this->show('legal');
+    }
+
+    public function bucket()
+    {
+        $bucketModel = new Bucket();
+
+        $bucketProducts = $bucketModel->find();
+
+
+        $this->show('bucket',[
+            'bucketProducts' => $bucketProducts,
+        ]);
     }
 
     public function test()
@@ -63,5 +76,4 @@ class MainController extends CoreController
 
         dump(find(1), findAll());
     }
-
 }
