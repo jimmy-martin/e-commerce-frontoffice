@@ -47,7 +47,7 @@
             </a>
           </div>
           <div class="product-action-buttons">
-            <a href="#" class="btn btn-outline-dark btn-product-left"><i class="fa fa-shopping-cart"></i></a>
+            <a href="<?= $router->generate('main-home') . '?action=add&id=' . $product->getId() ?>" class="btn btn-outline-dark btn-product-left"><i class="fa fa-shopping-cart"></i></a>
             <a href="<?= $router->generate('catalog-product', ['id' => $product->getId()]) ?>" class="btn btn-dark btn-buy"><i class="fa-search fa"></i><span
                 class="btn-buy-label ml-2">Voir</span></a>
           </div>
