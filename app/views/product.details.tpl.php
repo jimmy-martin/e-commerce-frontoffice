@@ -23,7 +23,7 @@
       <div class="col-lg-6 col-sm-12">
         <div class="mb-3">
           <h3 class="h3 text-uppercase mb-1"><?= $product->getName() ?></h3>
-          <div class="text-muted">by <em><?= $brand->find($product->getBrandId())->getName() ?></em></div>
+          <div class="text-muted">by <em><?= $product->getBrand()->getName() ?></em></div>
           <div>
             <!-- Je dynamise l'affichage de la note  -->
             <?php for ($note = 0; $note < 5; $note++) :

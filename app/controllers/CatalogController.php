@@ -81,7 +81,7 @@ class CatalogController extends CoreController
     public function product($params)
     {
         $productModel = new Product();
-        $brandModel = new Brand();
+        // $brandModel = new Brand();
         $categoryModel = new Category();
         $product = $productModel->find($params['id']);
 
@@ -91,7 +91,7 @@ class CatalogController extends CoreController
 
         $this->show('product.details', [
             'product' => $product,
-            'brand' => $brandModel,
+            // 'brand' => $brandModel,
             'category' => $categoryModel,
         ]);
     }

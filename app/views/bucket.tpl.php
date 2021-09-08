@@ -35,7 +35,7 @@
                   <div class="cart-item">
                     <div class="row d-flex align-items-center text-center">
                       <div class="col-5">
-                        <div class="d-flex align-items-center"><a href="detail.html"><img src="<?= $absoluteURL ?>/<?= $product->getPicture() ?>" alt="..." class="cart-item-img"></a>
+                        <div class="d-flex align-items-center"><a href="detail.html"><img src="<?= $product->getPicture() ?>" alt="..." class="cart-item-img"></a>
                           <div class="cart-title text-left"><a href="detail.html" class="text-uppercase text-dark"><strong><?= $product->getName() ?></strong></a><br><span class="text-muted text-sm">Taille : Large</span><br>
                             <span class="text-muted text-sm">Couleur : Jaune</span>
                           </div>

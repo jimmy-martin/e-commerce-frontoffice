@@ -133,6 +133,18 @@ class Product extends CoreModel
     #region getters & setters // permet de pouvoir reduire par la suite une partie du code
 
     /**
+     * Gets product's brand
+     *
+     * @return app\models\Brand
+     */
+    public function getBrand()
+    {
+        $brandModel = new Brand();
+        $productBrand = $brandModel->find($this->brand_id);
+        return $productBrand;
+    }
+
+    /**
      * Get the value of description
      */
     public function getDescription()
@@ -157,7 +169,7 @@ class Product extends CoreModel
      */
     public function getPicture()
     {
-       return $_SERVER['BASE_URI'].'/'.$this->picture;
+        return $_SERVER['BASE_URI'] . '/' . $this->picture;
     }
 
     /**

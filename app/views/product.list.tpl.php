@@ -43,7 +43,7 @@
         <div class="product col-xl-3 col-lg-4 col-sm-6">
           <div class="product-image">
             <a href="<?= $router->generate('catalog-product', ['id' => $product->getId()]) ?>" class="product-hover-overlay-link">
-              <img src="<?= $absoluteURL ?>/<?= $product->getPicture() ?>" alt="product" class="img-fluid">
+              <img src="<?= $product->getPicture() ?>" alt="product" class="img-fluid">
             </a>
           </div>
           <div class="product-action-buttons">
