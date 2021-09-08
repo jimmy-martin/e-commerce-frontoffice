@@ -63,8 +63,9 @@ class Product extends CoreModel
     }
 
     /**
-     * Return all the products
+     * Return all brand's products
      *
+     * @param integer $id brand's id
      * @return [object] $allProductObjects
      */
     public function findForBrand($id)
@@ -82,6 +83,12 @@ class Product extends CoreModel
         return $allProductObjects;
     }
 
+    /**
+     * Find all category's products
+     *
+     * @param integer $id category's id
+     * @return self[]
+     */
     public function findForCategory($id)
     {
         $pdo = Database::getPDO();
@@ -97,6 +104,12 @@ class Product extends CoreModel
         return $allProductObjects;
     }
 
+    /**
+     * Find all type's products
+     *
+     * @param integer $id type's id
+     * @return self[]
+     */
     public function findForType($id)
     {
         $pdo = Database::getPDO();
@@ -142,6 +155,18 @@ class Product extends CoreModel
         $brandModel = new Brand();
         $productBrand = $brandModel->find($this->brand_id);
         return $productBrand;
+    }
+
+    /**
+     * Gets product's type
+     *
+     * @return app\models\Type
+     */
+    public function getType()
+    {
+        $typeModel = new Type();
+        $productType = $typeModel->find($this->type_id);
+        return $productType;
     }
 
     /**

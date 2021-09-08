@@ -27,7 +27,7 @@
           <div>
             <!-- Je dynamise l'affichage de la note  -->
             <?php for ($note = 0; $note < 5; $note++) :
-              if ($note <= $product->getRate()) : ?>
+              if ($product->getRate() > $note) : ?>
                 <i class="fa fa-star"></i>
               <?php else : ?>
                 <i class="fa fa-star-o"></i>

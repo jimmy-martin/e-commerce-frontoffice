@@ -16,10 +16,9 @@ class CatalogController extends CoreController
     {
         $categoryModel = new Category();
         $productModel = new Product();
-        $typeModel = new Type();
         
         $category = $categoryModel->find($params['id']);
-        $categoryProducts = $productModel->findForCategory($params['id']);
+        $categoryProducts = $productModel->findForCategory($category->getId());
         
         // dump($params);
         dump($category);
@@ -28,7 +27,6 @@ class CatalogController extends CoreController
         $this->show('product.list', [
             'listName' => $category,
             'products' => $categoryProducts,
-            'type' => $typeModel,
         ]);
     }
 
@@ -81,7 +79,6 @@ class CatalogController extends CoreController
     public function product($params)
     {
         $productModel = new Product();
-        // $brandModel = new Brand();
         $categoryModel = new Category();
         $product = $productModel->find($params['id']);
 
@@ -91,7 +88,6 @@ class CatalogController extends CoreController
 
         $this->show('product.details', [
             'product' => $product,
-            // 'brand' => $brandModel,
             'category' => $categoryModel,
         ]);
     }
