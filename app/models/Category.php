@@ -97,7 +97,7 @@ class Category extends CoreModel
      */
     public function getPicture()
     {
-        return $_SERVER['BASE_URI']."/".$this->picture;
+        return $this->picture;
     }
 
     /**
